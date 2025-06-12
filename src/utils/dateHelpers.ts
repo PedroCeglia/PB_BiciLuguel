@@ -41,7 +41,7 @@ export const convertSaoPauloToUTC = (saoPauloDate: Date): string => {
 export const convertUTCToSaoPaulo = (utcDateString: string): Date => {
   const utcDate = new Date(utcDateString);
   // Subtrair 3 horas (3 * 60 * 60 * 1000 milliseconds)
-  return new Date(utcDate.getTime() - (0 * 60 * 60 * 1000));
+  return new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
 };
 
 /**
