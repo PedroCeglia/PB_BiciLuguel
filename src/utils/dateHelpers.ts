@@ -39,9 +39,18 @@ export const convertSaoPauloToUTC = (saoPauloDate: Date): string => {
  * Subtrai 3 horas da data UTC para obter o horário de São Paulo
  */
 export const convertUTCToSaoPaulo = (utcDateString: string): Date => {
+  console.log("----------------")
+  console.log("----------------")
+  console.log("convertUTCToSaoPaulo")
+  console.log("UTC Date String:", utcDateString);
   const utcDate = new Date(utcDateString);
   // Subtrair 3 horas (3 * 60 * 60 * 1000 milliseconds)
-  return new Date(utcDate.getTime() - (3 * 60 * 60 * 1000));
+  const final = new Date(utcDate.getTime() - (6 * 60 * 60 * 1000));
+  console.log("Converted to São Paulo Date:", final);
+  console.log(utcDate)
+  console.log("----------------")
+  console.log("----------------")
+  return final
 };
 
 /**

@@ -21,6 +21,8 @@ interface ActiveRideCardProps {
 const ActiveRideCard: React.FC<ActiveRideCardProps> = ({ rental, onTimeUpdate }) => {
   // Converter data UTC para São Paulo para exibição
   const startDateInSaoPaulo = convertUTCToSaoPaulo(rental.startDate);
+  console.log("Start Date in São Paulo:", rental.startDate);
+  console.log("Start Date in São Paulo 2:", startDateInSaoPaulo);
 
   return (
     <Card className="border-0 shadow-lg bg-white/90 backdrop-blur-sm">
@@ -47,7 +49,7 @@ const ActiveRideCard: React.FC<ActiveRideCardProps> = ({ rental, onTimeUpdate })
           <div>
             <label className="text-sm text-gray-500">Início da corrida</label>
             <p className="font-medium">
-              {startDateInSaoPaulo.toLocaleString('pt-BR')}
+              {rental.startDate.split("T")[0]}, {rental.startDate.split("T")[1].slice(0, 5)}
             </p>
           </div>
           <div>
